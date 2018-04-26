@@ -7,11 +7,16 @@ using namespace std;
 int main(){
 	char next = 'y';
 	int len = 0;
-	
+	string action;
 	cout<< "How long do you want your list:  ";
 	cin>> len;
 	
-	ToDo list(len);
+	todo list(len);
+	
+	
+	//Array of todo objects
+	//Make sure you have a ()constructor
+	todo manylists[10];
 	
 	while(next != 'x'){
 		
@@ -24,12 +29,18 @@ int main(){
 		
 		switch(next){
 			case 'a':
+				cout << "Name a todo item: ";
+				cin  >> action;
+				list.add(action);
 				break;
 			case 'd':
+				list.done();
 				break;
 			case 'p':
+				list.print();
 				break;
 			case 'x':
+				//list.exit();
 				break;
 			}
 		}
